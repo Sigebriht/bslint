@@ -3,6 +3,7 @@ import * as yargs from 'yargs';
 import { DiagnosticSeverity } from 'brighterscript';
 import { BsLintConfig, Linter } from '.';
 import { normalizeConfig } from './util';
+import {outputAsJson} from "./jsonOutput";
 
 const options = yargs
     .usage('$0', 'Bright(er)Script code linter')
@@ -20,7 +21,8 @@ const options = yargs
     .option('lintConfig', { type: 'string', description: 'Path to a bslint.json configuration file.' })
     .option('fix', { type: 'boolean', description: 'Fix automatically minor issues (experimental)' })
     .option('checkUsage', { type: 'boolean', description: 'Look for potentially unused components and scripts' })
-    .option('watch', { type: 'boolean', defaultDescription: 'false', description: 'Watch input files.' }).argv;
+    .option('watch', { type: 'boolean', defaultDescription: 'false', description: 'Watch input files.' })
+    .option('outFile', { type: 'string', description: 'Output file for results in JSON format, e.g. for SonarQube' }).argv;
 
 async function run(options: BsLintConfig) {
     if (options.cwd) {
@@ -34,6 +36,9 @@ async function run(options: BsLintConfig) {
     const diagnostics = await linter.run(config);
     // if this is a single run (i.e. not watch mode) and there are error diagnostics, return an error code
     const hasError = !!diagnostics.find((x) => x.severity === DiagnosticSeverity.Error);
+    if (config.outFile) {
+        outputAsJson(diagnostics, config.outFile);
+    }
     if (!config.watch && hasError) {
         process.exit(1);
     }

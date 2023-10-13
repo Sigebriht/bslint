@@ -19,7 +19,7 @@ export type RuleColorAlpha = 'always' | 'allowed' | 'never' | 'off';
 export type RuleColorAlphaDefaults = 'allowed' | 'only-hidden' | 'never' | 'off';
 export type RuleColorCertCompliant = 'always' | 'off'; // Roku cert requirement for broadcast safe colors. 6.4
 
-export type BsLintConfig = Pick<BsConfig, 'project' | 'rootDir' | 'files' | 'cwd' | 'watch'> & {
+export type BsLintConfig = Pick<BsConfig, 'project' | 'rootDir' | 'files' | 'cwd' | 'watch' | 'outFile' > & {
     lintConfig?: string;
     rules?: {
         'assign-all-paths'?: RuleSeverity;
