@@ -34,7 +34,6 @@ function convertToJson(diags: BsDiagnostic[]): string {
         out += `,"severity":"${qualityLevel.severity}"`;
         out += `,"type":"${qualityLevel.type}"`;
         out += `,"primaryLocation":{`;
-        //"primaryLocation":{"textRange":{"startLine":16}}
         out += `"message":"${d.message}"`;
         out += `,"filePath":"${d.file.pkgPath}"`;
         out += `,"textRange":{"startLine":"${d.range.start.line}","endLine":"${d.range.end.line}"}`

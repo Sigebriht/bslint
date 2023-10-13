@@ -3,7 +3,7 @@ import * as yargs from 'yargs';
 import { DiagnosticSeverity } from 'brighterscript';
 import { BsLintConfig, Linter } from '.';
 import { normalizeConfig } from './util';
-import {outputAsJson} from "./jsonOutput";
+import { outputAsJson } from "./jsonOutput";
 
 const options = yargs
     .usage('$0', 'Bright(er)Script code linter')
