@@ -140,14 +140,14 @@ export const messages = {
         severity: DiagnosticSeverity.Error,
         code: CodeStyleError.AACommaFound,
         source: 'bslint',
-        message: `Remove optional comma`,
+        message: `${CS} Remove optional comma`,
         range
     }),
     addAAComma: (range: Range) => ({
         severity: DiagnosticSeverity.Error,
         code: CodeStyleError.AACommaMissing,
         source: 'bslint',
-        message: `Add comma after the expression`,
+        message: `${CS} Add comma after the expression`,
         range
     }),
     addEolLast: (range: Range, preferredEol: string) => ({
