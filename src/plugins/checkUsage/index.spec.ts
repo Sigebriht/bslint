@@ -50,8 +50,8 @@ describe('checkUsage', () => {
             }
         });
         expectDiagnosticsFmt(diagnostics, [
-            `01:LINT4002:Script 'components${path.sep}child2.brs' does not seem to be used`,
-            `02:LINT4001:Component 'components${path.sep}child2.xml' does not seem to be used`
+            `01:LINT4002:Strictness: Script 'components${path.sep}child2.brs' does not seem to be used`,
+            `02:LINT4001:Strictness: Component 'components${path.sep}child2.xml' does not seem to be used`
         ]);
     });
 });

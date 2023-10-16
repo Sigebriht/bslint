@@ -586,12 +586,12 @@ describe('codeStyle', () => {
             });
             const actual = fmtDiagnostics(diagnostics);
             const expected = [
-                `03:LINT3013:Remove optional comma`,
-                `04:LINT3013:Remove optional comma`,
-                `11:LINT3013:Remove optional comma`,
-                `12:LINT3013:Remove optional comma`,
-                `13:LINT3013:Remove optional comma`,
-                `31:LINT3013:Remove optional comma`
+                `03:LINT3013:Code style: Remove optional comma`,
+                `04:LINT3013:Code style: Remove optional comma`,
+                `11:LINT3013:Code style: Remove optional comma`,
+                `12:LINT3013:Code style: Remove optional comma`,
+                `13:LINT3013:Code style: Remove optional comma`,
+                `31:LINT3013:Code style: Remove optional comma`
             ];
             expect(actual).deep.equal(expected);
         });
@@ -606,10 +606,10 @@ describe('codeStyle', () => {
             });
             const actual = fmtDiagnostics(diagnostics);
             const expected = [
-                `13:LINT3013:Remove optional comma`,
-                `19:LINT3014:Add comma after the expression`,
-                `20:LINT3014:Add comma after the expression`,
-                `31:LINT3013:Remove optional comma`
+                `13:LINT3013:Code style: Remove optional comma`,
+                `19:LINT3014:Code style: Add comma after the expression`,
+                `20:LINT3014:Code style: Add comma after the expression`,
+                `31:LINT3013:Code style: Remove optional comma`
             ];
             expect(actual).deep.equal(expected);
         });
@@ -624,11 +624,11 @@ describe('codeStyle', () => {
             });
             const actual = fmtDiagnostics(diagnostics);
             const expected = [
-                `05:LINT3014:Add comma after the expression`,
-                `19:LINT3014:Add comma after the expression`,
-                `20:LINT3014:Add comma after the expression`,
-                `21:LINT3014:Add comma after the expression`,
-                `31:LINT3013:Remove optional comma`
+                `05:LINT3014:Code style: Add comma after the expression`,
+                `19:LINT3014:Code style: Add comma after the expression`,
+                `20:LINT3014:Code style: Add comma after the expression`,
+                `21:LINT3014:Code style: Add comma after the expression`,
+                `31:LINT3013:Code style: Remove optional comma`
             ];
             expect(actual).deep.equal(expected);
         });
