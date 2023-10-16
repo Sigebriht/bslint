@@ -9,13 +9,13 @@ interface QualityLevel {
 function severityToQualityLevel(severity: number): QualityLevel {
     switch (severity) {
         case 1:
-            return { severity: "ERROR", type: "BUG"};
+            return { severity: "CRITICAL", type: "BUG"};
 
         case 2:
-            return { severity: "WARNING", type: "CODE_SMELL" };
+            return { severity: "MAJOR", type: "CODE_SMELL" };
 
         case 3:
-            return  { severity: "INFORMATION", type: "INFO" };
+            return  { severity: "MINOR", type: "INFO" };
 
         case 4:
             return { severity: "HINT", type: "HINT" };

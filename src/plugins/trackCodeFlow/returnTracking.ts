@@ -39,7 +39,7 @@ export function createReturnLinter(
                 diagnostics.push({
                     severity: severity.unreachableCode,
                     code: ReturnLintError.UnreachableCode,
-                    message: 'Unreachable code',
+                    message: 'LINT2001:Code flow: Unreachable code',
                     range: curr.stat.range,
                     file: file,
                     tags: [DiagnosticTag.Unnecessary]
