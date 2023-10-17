@@ -37,7 +37,7 @@ async function run(options: BsLintConfig) {
     // if this is a single run (i.e. not watch mode) and there are error diagnostics, return an error code
     const hasError = !!diagnostics.find((x) => x.severity === DiagnosticSeverity.Error);
     if (config.outFile) {
-        outputAsJson(diagnostics, config.outFile);
+        outputAsJson(diagnostics, config.outFile, config.rootDir);
     }
     if (!config.watch && hasError) {
         process.exit(1);
